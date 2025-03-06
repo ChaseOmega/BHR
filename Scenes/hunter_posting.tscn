@@ -1,0 +1,144 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4kjhii74tcf8"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Posting.gd" id="1_lq4ec"]
+[ext_resource type="Texture2D" uid="uid://dr6dsdcf4hhxo" path="res://Images/icon.svg" id="2_tv8ug"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -752.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Interface" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_lq4ec")
+
+[node name="Reserve Slot" type="Control" parent="Interface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Interface/Reserve Slot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Reserve Slot/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+text = "RESERVE"
+fit_content = true
+
+[node name="CharacterSelect" type="Control" parent="Interface"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Interface/CharacterSelect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/CharacterSelect/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+text = "RESERVE"
+fit_content = true
+
+[node name="CharacterInfo" type="Control" parent="Interface"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Interface/CharacterInfo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/CharacterInfo/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+text = "RESERVE"
+fit_content = true
+
+[node name="Ready" type="Control" parent="Interface"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Interface/Ready"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Interface/Ready/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+text = "RESERVE"
+fit_content = true
+
+[node name="Display" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+texture = ExtResource("2_tv8ug")
+
+[connection signal="pressed" from="Interface/Reserve Slot/Button" to="Interface" method="_on_button_pressed"]
+[connection signal="pressed" from="Interface/CharacterSelect/Button" to="Interface" method="_on_button_pressed"]
+[connection signal="pressed" from="Interface/CharacterInfo/Button" to="Interface" method="_on_button_pressed"]
+[connection signal="pressed" from="Interface/Ready/Button" to="Interface" method="_on_button_pressed"]

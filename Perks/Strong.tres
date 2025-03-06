@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StatModifier" load_steps=2 format=3 uid="uid://cqlq0v6h86t2n"]
+
+[ext_resource type="Script" path="res://Perks/StatModifier.gd" id="1_qpqb1"]
+
+[resource]
+script = ExtResource("1_qpqb1")
+name = "Strong"
+nescription = ""
+flavorText = ""

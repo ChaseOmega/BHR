@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://3webvyw21jef"]
+
+[ext_resource type="TileSet" uid="uid://dbqado2qd3j66" path="res://Scenes/UnitPath.tres" id="1_1bt03"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Grid.gd" id="7_7mhmc"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/UnitPath.gd" id="97_ju1p0"]
+
+[sub_resource type="Resource" id="Resource_mneh6"]
+script = ExtResource("7_7mhmc")
+size = Vector2(20, 20)
+cell_size = Vector2(80, 80)
+
+[node name="UnitPath" type="TileMapLayer"]
+y_sort_enabled = true
+tile_set = ExtResource("1_1bt03")
+script = ExtResource("97_ju1p0")
+grid = SubResource("Resource_mneh6")

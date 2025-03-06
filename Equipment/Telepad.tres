@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="telepad" load_steps=3 format=3 uid="uid://cxyqxsbfo3144"]
+
+[ext_resource type="Script" path="res://Equipment/TeleporterEquipment.gd" id="1_1w8k6"]
+[ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="1_eqjoy"]
+
+[resource]
+script = ExtResource("1_1w8k6")
+name = "Test"
+description = "Test2"
+flavorText = "Test3"
+art = ExtResource("1_eqjoy")

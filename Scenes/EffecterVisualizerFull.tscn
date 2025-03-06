@@ -1,0 +1,188 @@
+[gd_scene load_steps=3 format=3 uid="uid://tklqmuavjeb7"]
+
+[ext_resource type="Script" path="res://Scripts/Effecters/effecter_visualizer_full.gd" id="1_d4hfu"]
+[ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="2_jbv6e"]
+
+[node name="CardVisualizerFull" type="Control" node_paths=PackedStringArray("coloredRegions", "art", "title", "description", "flavor", "value")]
+custom_minimum_size = Vector2(250, 400)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d4hfu")
+coloredRegions = [NodePath("HSplitContainer/Generic Portion/Background")]
+art = NodePath("HSplitContainer/Generic Portion/TextureRect")
+title = NodePath("HSplitContainer/Generic Portion/Title/Label")
+description = NodePath("HSplitContainer/Generic Portion/Technical Text/Label3")
+flavor = NodePath("HSplitContainer/Generic Portion/FlavorText/Label3")
+value = NodePath("HSplitContainer/Generic Portion/ValueBackground/Value")
+metadata/_edit_vertical_guides_ = [-136.0]
+
+[node name="HSplitContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StateInfo" type="Control" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Background" type="ColorRect" parent="HSplitContainer/StateInfo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StateText" type="ColorRect" parent="HSplitContainer/StateInfo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Label3" type="Label" parent="HSplitContainer/StateInfo/StateText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "This space should be used to display card states such as counters or otherwise that are important to the specific instance of the card being viewed."
+autowrap_mode = 2
+clip_text = true
+
+[node name="Button" type="Button" parent="HSplitContainer/StateInfo"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hide Display"
+
+[node name="Generic Portion" type="Control" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Background" type="ColorRect" parent="HSplitContainer/Generic Portion"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/Generic Portion"]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.12
+anchor_right = 0.44
+anchor_bottom = 0.57
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jbv6e")
+expand_mode = 1
+
+[node name="Title" type="ColorRect" parent="HSplitContainer/Generic Portion"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Label" type="Label" parent="HSplitContainer/Generic Portion/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Test Card"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Technical Text" type="ColorRect" parent="HSplitContainer/Generic Portion"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.59
+anchor_right = 0.9
+anchor_bottom = 0.95
+grow_horizontal = 0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Label3" type="Label" parent="HSplitContainer/Generic Portion/Technical Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Teleport to anywhere within 5 tiles."
+autowrap_mode = 2
+clip_text = true
+
+[node name="ValueBackground" type="ColorRect" parent="HSplitContainer/Generic Portion"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.1
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Value" type="Label" parent="HSplitContainer/Generic Portion/ValueBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0
+"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="FlavorText" type="ColorRect" parent="HSplitContainer/Generic Portion"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.12
+anchor_right = 0.9
+anchor_bottom = 0.57
+grow_horizontal = 0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Label3" type="Label" parent="HSplitContainer/Generic Portion/FlavorText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "A description should be put here"
+autowrap_mode = 2
+clip_text = true
+
+[connection signal="button_down" from="HSplitContainer/StateInfo/Button" to="." method="hideDisplay"]

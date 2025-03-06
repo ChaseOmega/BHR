@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://ceq257iqmvi0v"]
+
+[ext_resource type="Script" path="res://Cards/Card.gd" id="1_geieh"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_geieh")
+value = 0
+source = 0
+Type = 0
+name = ""
+description = ""
+flavorText = ""
+instanceText = ""

@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=3 uid="uid://csr0pktknii74"]
+
+[ext_resource type="Script" path="res://Import/ServerBrowser.gd" id="1_dsmmg"]
+[ext_resource type="PackedScene" uid="uid://2q22qsbbnpgo" path="res://Scenes/PreLobbyClient.tscn" id="2_ilyoj"]
+[ext_resource type="PackedScene" uid="uid://dejo0e5d32ria" path="res://Scenes/PreLobbyHost.tscn" id="3_mjof2"]
+
+[node name="PreLobbyScreen" type="Control" node_paths=PackedStringArray("IpAdress", "Port")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dsmmg")
+IpAdress = NodePath("HSplitContainer2/HSplitContainer/IPAddress")
+Port = NodePath("HSplitContainer2/HSplitContainer/Port")
+chat = ExtResource("2_ilyoj")
+host = ExtResource("3_mjof2")
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+split_offset = 750
+dragger_visibility = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer2"]
+layout_mode = 2
+split_offset = 805
+dragger_visibility = 2
+
+[node name="IPAddress" type="LineEdit" parent="HSplitContainer2/HSplitContainer"]
+layout_mode = 2
+placeholder_text = "IP Address"
+
+[node name="Port" type="SpinBox" parent="HSplitContainer2/HSplitContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 65535.0
+value = 1.0
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="HSplitContainer2"]
+layout_mode = 2
+split_offset = 200
+dragger_visibility = 2
+
+[node name="CreateChatroomButton" type="Button" parent="HSplitContainer2/HSplitContainer2"]
+layout_mode = 2
+text = "Create Room
+"
+
+[node name="JoinChatroomButton2" type="Button" parent="HSplitContainer2/HSplitContainer2"]
+layout_mode = 2
+text = "Join Room"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ConnectionRecord" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/ConnectionRecord"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 0.360784)
+
+[node name="IPAddress" type="Label" parent="VBoxContainer/ConnectionRecord"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.25
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+text = "Teststestseetest"
+
+[node name="Port" type="Label" parent="VBoxContainer/ConnectionRecord"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.5
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+text = "Teststestseetest"
+
+[node name="last Time Connected" type="Label" parent="VBoxContainer/ConnectionRecord"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.75
+size_flags_horizontal = 3
+text = "Teststestseetest"
+
+[node name="Notes" type="LineEdit" parent="VBoxContainer/ConnectionRecord"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_right = 1.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.45
+placeholder_text = "Put Notes here"
+flat = true
+
+[connection signal="pressed" from="HSplitContainer2/HSplitContainer2/CreateChatroomButton" to="." method="_on_create_chatroom_button_pressed"]
+[connection signal="pressed" from="HSplitContainer2/HSplitContainer2/JoinChatroomButton2" to="." method="_on_join_chatroom_button_pressed"]

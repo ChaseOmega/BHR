@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ybom337542h"]
+
+[ext_resource type="Script" path="res://Scripts/Effecters/effecter_visualizer_mini.gd" id="1_ne0hn"]
+[ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="2_6sppo"]
+
+[node name="CardVisualizerFull" type="Button" node_paths=PackedStringArray("coloredRegions", "art", "title", "value")]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 150.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("1_ne0hn")
+coloredRegions = [NodePath("Background")]
+art = NodePath("TextureRect")
+title = NodePath("Title/Label")
+value = NodePath("ValueColor/Label")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.8
+
+[node name="Title" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Test Card"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6sppo")
+expand_mode = 1
+
+[node name="ValueColor" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.1
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Label" type="Label" parent="ValueColor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "0
+"
+horizontal_alignment = 1
+clip_text = true

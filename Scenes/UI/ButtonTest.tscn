@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2426r3g88i2x"]
+
+[ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="1_d1aom"]
+[ext_resource type="Script" path="res://Scripts/UI/DoubleButton.gd" id="1_hitq5"]
+
+[node name="ButtonTest" type="Node2D"]
+
+[node name="DoubleButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_d1aom")
+script = ExtResource("1_hitq5")

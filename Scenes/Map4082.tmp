@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=4 uid="uid://hg742u6hnq52"]
+
+[ext_resource type="TileSet" uid="uid://dbqado2qd3j66" path="res://Scenes/UnitPath.tres" id="1_kt8nv"]
+[ext_resource type="PackedScene" uid="uid://cg8r4mxhixlmc" path="res://Scenes/Unit.tscn" id="1_niok0"]
+[ext_resource type="Script" path="res://Scenes/GameBoard.gd" id="2_k53dm"]
+[ext_resource type="Texture2D" uid="uid://c5trgq5jumeji" path="res://Isometric/Road/beach.png" id="3_1db67"]
+[ext_resource type="PackedScene" uid="uid://8v0qmrym53ag" path="res://Scenes/cursor.tscn" id="3_j3rjf"]
+[ext_resource type="Script" path="res://Scenes/unit_overlay.gd" id="4_ieelw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kkav"]
+resource_name = "Test"
+texture = ExtResource("3_1db67")
+texture_region_size = Vector2i(100, 65)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w8plm"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(100, 50)
+sources/1 = SubResource("TileSetAtlasSource_1kkav")
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Board" type="Node2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("2_k53dm")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Board"]
+tile_map_data = PackedByteArray("AAAGAAAAJgEAAAAAAAAGAAEAJgEAAAAAAAAGAAIAJgEAAAAAAAAGAAMAJgEAAAAAAAAGAAQAJgEAAAAAAAAHAAAAJgEAAAAAAAAIAAAAJgEAAAAAAAAIAAEAJgEAAAAAAAAIAAMAJgEAAAAAAAAIAAQAJgEAAAAAAAAIAAUAJgEAAAAAAAAJAAAAJgEAAAAAAAAKAAAAJgEAAAAAAAAKAAQAJgEAAAAAAAAKAAUAJgEAAAAAAAALAAAAJgEAAAAAAAALAAEAJgEAAAAAAAALAAIAJgEAAAAAAAALAAMAJgEAAAAAAAALAAQAJgEAAAAAAAALAAUAJgEAAAAAAAAMAAAAJgEAAAAAAAAMAAEAJgEAAAAAAAAMAAIAJgEAAAAAAAAMAAMAJgEAAAAAAAAMAAQAJgEAAAAAAAAMAAUAJgEAAAAAAAANAAAAKAEAAAAAAAANAAEAKAEAAAAAAAANAAIAKAEAAAAAAAANAAMAKAEAAAAAAAAOAAIAKAEAAAAAAAAOAAMAKAEAAAAAAAAGAAUAJgEAAAAAAAAHAAEAJgEAAAAAAAAHAAIAJgEAAAAAAAAHAAMAJgEAAAAAAAAHAAQAJgEAAAAAAAAHAAUAJgEAAAAAAAAIAAIAJgEAAAAAAAAJAAEAJgEAAAAAAAAJAAIAJgEAAAAAAAAJAAMAJgEAAAAAAAAJAAQAJgEAAAAAAAAJAAUAJgEAAAAAAAAKAAEAJgEAAAAAAAAKAAIAJgEAAAAAAAAKAAMAJgEAAAAAAAANAAQAKAEAAAAAAAANAAUAJgEAAAAAAAAOAAAAKAEAAAAAAAAOAAEAKAEAAAAAAAAOAAQAKAEAAAAAAAAOAAUAKAEAAAAAAAAPAAAAKAEAAAAAAAAPAAEAKAEAAAAAAAAPAAIAKAEAAAAAAAAPAAQAKAEAAAAAAAAPAAUAKAEAAAAAAAAJAAYAJgEAAAAAAAAJAAcAJgEAAAAAAAAKAAcAJgEAAAAAAAALAAcAJgEAAAAAAAAMAAcAJgEAAAAAAAANAAcAJgEAAAAAAAAOAAcAJgEAAAAAAAAPAAcAJgEAAAAAAAAAAAAAJgEAAAAAAAA=")
+tile_set = ExtResource("1_kt8nv")
+
+[node name="UnitOverlay" type="TileMapLayer" parent="Board"]
+modulate = Color(1, 1, 1, 0.757)
+tile_set = SubResource("TileSet_w8plm")
+script = ExtResource("4_ieelw")
+
+[node name="Unit" parent="Board" node_paths=PackedStringArray("map") instance=ExtResource("1_niok0")]
+position = Vector2(200, 300)
+map = NodePath("../TileMapLayer")
+move_range = 9
+
+[node name="Cursor" parent="Board" node_paths=PackedStringArray("map") instance=ExtResource("3_j3rjf")]
+map = NodePath("../TileMapLayer")
+
+[node name="Camera2D" type="Camera2D" parent="Board"]
+offset = Vector2(300, 300)
+
+[connection signal="accept_pressed" from="Board/Cursor" to="Board" method="_on_cursor_accept_pressed"]
+[connection signal="moved" from="Board/Cursor" to="Board" method="_on_cursor_moved"]

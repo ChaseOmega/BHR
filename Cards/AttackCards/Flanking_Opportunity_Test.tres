@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FlankingOpportunity" load_steps=2 format=3 uid="uid://btdexrd33ps6s"]
+
+[ext_resource type="Script" path="res://Cards/AttackCards/FlankingOpportunity.gd" id="1_lri5g"]
+
+[resource]
+script = ExtResource("1_lri5g")
+Value = 2
+source = 0
+name = "Flank"
+description = ""
+flavorText = ""

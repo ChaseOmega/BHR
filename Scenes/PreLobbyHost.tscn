@@ -1,0 +1,249 @@
+[gd_scene load_steps=5 format=3 uid="uid://dejo0e5d32ria"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PreLobbyHost.gd" id="1_jvpt0"]
+[ext_resource type="Texture2D" uid="uid://dr6dsdcf4hhxo" path="res://Images/icon.svg" id="2_7gebc"]
+[ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="2_jcm52"]
+[ext_resource type="PackedScene" uid="uid://bvberdwx60f75" path="res://Scenes/UI/Selecter.tscn" id="4_vxjet"]
+
+[node name="PreLobbyScene" type="Control" node_paths=PackedStringArray("mapSelect", "mapInfoSizeLabel", "mapInfoPlayerLabel", "mapInfoEquipmentLabel", "mapInfoMonsterLabel", "CardListUI", "EquipmentListUI")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jvpt0")
+mapSelect = NodePath("Control2/MapSelection")
+mapInfoSizeLabel = NodePath("Control2/MapInfo/Size")
+mapInfoPlayerLabel = NodePath("Control2/MapInfo/Players")
+mapInfoEquipmentLabel = NodePath("Control2/MapInfo/EquipmentLocations")
+mapInfoMonsterLabel = NodePath("Control2/MapInfo/MonsterSpawns")
+effectVisualizerBase = ExtResource("2_jcm52")
+CardListUI = NodePath("TabContainer/Deck")
+EquipmentListUI = NodePath("TabContainer/Equipment")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.05
+anchor_right = 0.25
+anchor_bottom = 0.5
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+item_count = 3
+item_0/text = "Test1"
+item_1/text = "Test2"
+item_2/text = "Test3"
+
+[node name="PlayerActions" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 0.9
+anchor_bottom = 1.0
+grow_horizontal = 0
+
+[node name="Info" type="Button" parent="PlayerActions"]
+layout_mode = 2
+text = "Display Info"
+
+[node name="Note" type="Button" parent="PlayerActions"]
+layout_mode = 2
+text = "Add Player Note"
+
+[node name="Kick Player" type="Button" parent="PlayerActions"]
+layout_mode = 2
+text = "Kick"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.78
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 2
+
+[node name="Map Settings" type="Control" parent="TabContainer"]
+visible = false
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Map Settings"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 20.0
+fit_to_longest_item = false
+
+[node name="OptionButton2" type="OptionButton" parent="TabContainer/Map Settings"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 400.0
+offset_bottom = 44.0
+fit_to_longest_item = false
+
+[node name="OptionButton3" type="OptionButton" parent="TabContainer/Map Settings"]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 400.0
+offset_bottom = 68.0
+fit_to_longest_item = false
+
+[node name="OptionButton4" type="OptionButton" parent="TabContainer/Map Settings"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 400.0
+offset_bottom = 92.0
+fit_to_longest_item = false
+
+[node name="OptionButton5" type="OptionButton" parent="TabContainer/Map Settings"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 400.0
+offset_bottom = 116.0
+fit_to_longest_item = false
+
+[node name="OptionButton6" type="OptionButton" parent="TabContainer/Map Settings"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 400.0
+offset_bottom = 140.0
+fit_to_longest_item = false
+
+[node name="Events" type="Control" parent="TabContainer"]
+visible = false
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Events"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 20.0
+fit_to_longest_item = false
+
+[node name="OptionButton2" type="OptionButton" parent="TabContainer/Events"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 400.0
+offset_bottom = 44.0
+fit_to_longest_item = false
+
+[node name="OptionButton3" type="OptionButton" parent="TabContainer/Events"]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 400.0
+offset_bottom = 68.0
+fit_to_longest_item = false
+
+[node name="OptionButton4" type="OptionButton" parent="TabContainer/Events"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 400.0
+offset_bottom = 92.0
+fit_to_longest_item = false
+
+[node name="Conditions" type="Control" parent="TabContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Conditions"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 20.0
+fit_to_longest_item = false
+
+[node name="OptionButton2" type="OptionButton" parent="TabContainer/Conditions"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 400.0
+offset_bottom = 44.0
+fit_to_longest_item = false
+
+[node name="OptionButton3" type="OptionButton" parent="TabContainer/Conditions"]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 400.0
+offset_bottom = 68.0
+fit_to_longest_item = false
+
+[node name="Deck" parent="TabContainer" instance=ExtResource("4_vxjet")]
+visible = false
+layout_mode = 2
+maxDuplicates = 3
+minSelected = 1
+maxSelected = 10
+Type = 3
+
+[node name="Equipment" parent="TabContainer" instance=ExtResource("4_vxjet")]
+visible = false
+layout_mode = 2
+minSelected = 1
+maxSelected = 10
+Type = 4
+metadata/_tab_index = 4
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.25
+anchor_bottom = 1.0
+
+[node name="MapSelection" type="OptionButton" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.05
+
+[node name="MapDisplay" type="TextureRect" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7gebc")
+
+[node name="MapInfo" type="VBoxContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.9
+
+[node name="Size" type="Label" parent="Control2/MapInfo"]
+layout_mode = 2
+text = "Map Size:"
+
+[node name="Players" type="Label" parent="Control2/MapInfo"]
+layout_mode = 2
+text = "Supported Player Count:"
+
+[node name="EquipmentLocations" type="Label" parent="Control2/MapInfo"]
+layout_mode = 2
+text = "Supported Equipment Count:"
+
+[node name="MonsterSpawns" type="Label" parent="Control2/MapInfo"]
+layout_mode = 2
+text = "Monster Spawner Count:"
+
+[node name="StartButton" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 0.1
+anchor_bottom = 1.0
+offset_right = 66.0
+text = "Start Game"
+
+[connection signal="item_selected" from="Control2/MapSelection" to="." method="_on_map_selection_item_selected"]
+[connection signal="pressed" from="Control2/StartButton" to="." method="startMatch"]

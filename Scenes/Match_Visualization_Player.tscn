@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8shsa4j5s6j8"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/match_visualization_player.gd" id="1_yxccm"]
+[ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="2_hi2f3"]
+
+[node name="MatchVisualizationMatchPlayer" type="Control" node_paths=PackedStringArray("playerName", "statLineAttack", "statLineDefense", "statLineMobility", "HealthText", "HealthBar", "CardHolder")]
+custom_minimum_size = Vector2(288, 129)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -864.0
+offset_bottom = -519.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yxccm")
+playerName = NodePath("PlayerName")
+statLineAttack = NodePath("StatLine/Attack")
+statLineDefense = NodePath("StatLine/Defense")
+statLineMobility = NodePath("StatLine/Movement")
+HealthText = NodePath("HealthText")
+HealthBar = NodePath("HealthBar")
+CardHolder = NodePath("Cards")
+CardVisualizerBase = ExtResource("2_hi2f3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.168627)
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.05
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 11
+text = "Player Name"
+horizontal_alignment = 1
+
+[node name="StatLine" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.235
+
+[node name="Attack" type="Label" parent="StatLine"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "Attack: "
+vertical_alignment = 2
+
+[node name="Defense" type="Label" parent="StatLine"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "Defense: "
+vertical_alignment = 2
+
+[node name="Movement" type="Label" parent="StatLine"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "Movement: "
+vertical_alignment = 2
+
+[node name="HealthText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.15
+anchor_right = 1.0
+anchor_bottom = 0.4
+text = "Health:"
+vertical_alignment = 2
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.5
+show_percentage = false
+
+[node name="Cards" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.9
+scale = Vector2(0.55, 0.55)

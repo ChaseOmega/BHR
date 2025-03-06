@@ -1,0 +1,221 @@
+[gd_scene load_steps=5 format=3 uid="uid://2q22qsbbnpgo"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PreLobbyClient.gd" id="1_0vce5"]
+[ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="2_e5mt4"]
+[ext_resource type="Texture2D" uid="uid://dr6dsdcf4hhxo" path="res://Images/icon.svg" id="2_x4n1r"]
+[ext_resource type="PackedScene" uid="uid://bvberdwx60f75" path="res://Scenes/UI/Selecter.tscn" id="4_p2kap"]
+
+[node name="PreLobbyScene" type="Control" node_paths=PackedStringArray("archetypeSelect", "nameInput", "levelInput", "cardInput", "equipmentInput", "skillsInput", "perksInput", "healthSelection", "attackSelection", "defenseSelection", "mobilitySelection", "spLabel", "spWarningMessage")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vce5")
+archetypeSelect = NodePath("HunterSelection")
+nameInput = NodePath("LineEdit")
+levelInput = NodePath("Level")
+cardInput = NodePath("TabContainer/DeckRefactor")
+equipmentInput = NodePath("TabContainer/EquipmentRefactor")
+skillsInput = NodePath("TabContainer/SkillRefactor")
+perksInput = NodePath("TabContainer/PerkRefactor")
+effecterVisualizerBase = ExtResource("2_e5mt4")
+healthSelection = NodePath("TabContainer/Stats/VBoxContainer/VBoxContainer/HealthOptions")
+attackSelection = NodePath("TabContainer/Stats/VBoxContainer/VBoxContainer2/AttackOptions")
+defenseSelection = NodePath("TabContainer/Stats/VBoxContainer/VBoxContainer3/DefenseOptions")
+mobilitySelection = NodePath("TabContainer/Stats/VBoxContainer/VBoxContainer4/MobilityOptions")
+spLabel = NodePath("TabContainer/Stats/Sp Display")
+spWarningMessage = NodePath("TabContainer/Stats/Sp Display Warning")
+maxSP = 6
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.15
+anchor_right = 0.25
+anchor_bottom = 0.6
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_x4n1r")
+
+[node name="HunterSelection" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.05
+flat = true
+
+[node name="Level" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_right = 0.2
+anchor_bottom = 0.05
+min_value = 1.0
+value = 1.0
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+item_count = 3
+item_0/text = "Test1"
+item_1/text = "Test2"
+item_2/text = "Test3"
+
+[node name="PlayerActions" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 0.9
+anchor_bottom = 1.0
+grow_horizontal = 0
+
+[node name="Info" type="Button" parent="PlayerActions"]
+layout_mode = 2
+text = "Display Info"
+
+[node name="Note" type="Button" parent="PlayerActions"]
+layout_mode = 2
+text = "Add Player Note"
+
+[node name="Kick Player" type="Button" parent="PlayerActions"]
+layout_mode = 2
+text = "Kick"
+
+[node name="Submit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 0.1
+anchor_bottom = 1.0
+text = "Submit"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.78
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Stats" type="Control" parent="TabContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Stats/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Stats/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Health: "
+
+[node name="HealthOptions" type="OptionButton" parent="TabContainer/Stats/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Stats/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Stats/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Attack: "
+
+[node name="AttackOptions" type="OptionButton" parent="TabContainer/Stats/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Stats/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Stats/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Defense:"
+
+[node name="DefenseOptions" type="OptionButton" parent="TabContainer/Stats/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="TabContainer/Stats/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Stats/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Mobility:"
+
+[node name="MobilityOptions" type="OptionButton" parent="TabContainer/Stats/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="Sp Display" type="Label" parent="TabContainer/Stats"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "x/y SP used"
+
+[node name="Sp Display Warning" type="Label" parent="TabContainer/Stats"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.05
+offset_left = -88.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.870588, 0, 0, 1)
+text = "Over SP Allotment please reduce usage!"
+
+[node name="SkillRefactor" parent="TabContainer" instance=ExtResource("4_p2kap")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="PerkRefactor" parent="TabContainer" instance=ExtResource("4_p2kap")]
+visible = false
+layout_mode = 2
+maxDuplicates = 1
+minSelected = 6
+maxSelected = 6
+metadata/_tab_index = 2
+
+[node name="EquipmentRefactor" parent="TabContainer" instance=ExtResource("4_p2kap")]
+visible = false
+layout_mode = 2
+maxDuplicates = 4
+maxSelected = 10
+Type = 4
+
+[node name="DeckRefactor" parent="TabContainer" instance=ExtResource("4_p2kap")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05
+anchor_right = 0.2
+anchor_bottom = 0.1
+
+[connection signal="pressed" from="Submit" to="." method="submit"]

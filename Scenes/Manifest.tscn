@@ -1,0 +1,34 @@
+[gd_scene load_steps=25 format=3 uid="uid://h7m2d4kbocu8"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/manifest.gd" id="1_ueydy"]
+[ext_resource type="Script" path="res://Archetypes/archetype.gd" id="2_6dgkl"]
+[ext_resource type="Resource" uid="uid://cu48f78k3ctu8" path="res://Archetypes/Thief.tres" id="3_4hjcm"]
+[ext_resource type="Resource" uid="uid://brq87xx3pnacu" path="res://Archetypes/Warrior.tres" id="4_pjb62"]
+[ext_resource type="Script" path="res://Skills/Skill.gd" id="5_4bnm5"]
+[ext_resource type="Resource" uid="uid://crugcxtvg6m7j" path="res://Skills/FuseMovement.tres" id="6_s3pnh"]
+[ext_resource type="Resource" uid="uid://c5ht6tm5woc6t" path="res://Skills/FusePower.tres" id="7_ml8d5"]
+[ext_resource type="Script" path="res://Perks/perk.gd" id="8_enjl5"]
+[ext_resource type="Resource" uid="uid://dpyf81583ul24" path="res://Skills/TeleportSkill.tres" id="8_wm6kk"]
+[ext_resource type="Resource" uid="uid://cnis6tebcg362" path="res://Perks/Cunning.tres" id="9_3xur1"]
+[ext_resource type="Script" path="res://Cards/Card.gd" id="10_djfxr"]
+[ext_resource type="Resource" uid="uid://e2bjaghqhwqc" path="res://Perks/Durable.tres" id="10_ilg0k"]
+[ext_resource type="Resource" uid="uid://cqlq0v6h86t2n" path="res://Perks/Strong.tres" id="11_k23ev"]
+[ext_resource type="Resource" uid="uid://dnrr2tatoatw2" path="res://Cards/MovementCards/TestMovement.tres" id="11_x4p6l"]
+[ext_resource type="Resource" uid="uid://bkdx85qy22ygn" path="res://Cards/MovementCards/TeleporterCard.tres" id="12_etsrv"]
+[ext_resource type="Resource" uid="uid://o0w3xnx7b8e2" path="res://Perks/Sneaky.tres" id="12_p2n8j"]
+[ext_resource type="Resource" uid="uid://btdexrd33ps6s" path="res://Cards/AttackCards/Flanking_Opportunity_Test.tres" id="13_b81e4"]
+[ext_resource type="Resource" uid="uid://dgp5vv4ddkbbi" path="res://Cards/TrapCards/TestTrap.tres" id="14_j5i6s"]
+[ext_resource type="Resource" uid="uid://ceq257iqmvi0v" path="res://Cards/DefenceCards/TestDefense.tres" id="15_c55wu"]
+[ext_resource type="Resource" uid="uid://coejg8lygkiaj" path="res://Cards/SpecialCards/TestSpecial.tres" id="16_0q4xf"]
+[ext_resource type="Script" path="res://Equipment/Equipment.gd" id="17_84whw"]
+[ext_resource type="Resource" uid="uid://cmol2w0s2h3i5" path="res://Equipment/MahchineGun.tres" id="18_pjlrv"]
+[ext_resource type="Resource" uid="uid://psbcjmu8ydgp" path="res://Equipment/RocketLawnChair.tres" id="19_per2r"]
+[ext_resource type="Resource" uid="uid://cxyqxsbfo3144" path="res://Equipment/Telepad.tres" id="20_h4bq8"]
+
+[node name="Manifest" type="Node"]
+script = ExtResource("1_ueydy")
+archetypes = Array[ExtResource("2_6dgkl")]([ExtResource("3_4hjcm"), ExtResource("4_pjb62")])
+skills = Array[ExtResource("5_4bnm5")]([ExtResource("6_s3pnh"), ExtResource("7_ml8d5"), ExtResource("8_wm6kk")])
+perks = Array[ExtResource("8_enjl5")]([ExtResource("9_3xur1"), ExtResource("10_ilg0k"), ExtResource("11_k23ev"), ExtResource("12_p2n8j")])
+cards = Array[ExtResource("10_djfxr")]([ExtResource("11_x4p6l"), ExtResource("12_etsrv"), ExtResource("13_b81e4"), ExtResource("14_j5i6s"), ExtResource("15_c55wu"), ExtResource("16_0q4xf")])
+equipment = Array[ExtResource("17_84whw")]([ExtResource("18_pjlrv"), ExtResource("19_per2r"), ExtResource("20_h4bq8")])

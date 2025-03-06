@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://gwgyjsejd161"]
+
+[ext_resource type="Script" path="res://Import/Chat.gd" id="1_0p54c"]
+
+[node name="Chat" type="Control" node_paths=PackedStringArray("ChatDisplay", "MessageInput")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0p54c")
+ChatDisplay = NodePath("RichTextLabel")
+MessageInput = NodePath("HSplitContainer/TextEdit")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+split_offset = 1105
+dragger_visibility = 1
+
+[node name="TextEdit" type="LineEdit" parent="HSplitContainer"]
+layout_mode = 2
+placeholder_text = "Type your message here...."
+
+[node name="Button" type="Button" parent="HSplitContainer"]
+layout_mode = 2
+text = "Send Message"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.9
+offset_top = -64.8
+offset_bottom = -0.200012
+text = "Well this will work I think. Admittedly I'd prefer if it had a background so we will add that next"
+
+[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0.917647, 0.917647, 0.176471)
+
+[connection signal="pressed" from="HSplitContainer/Button" to="." method="sendMessage"]

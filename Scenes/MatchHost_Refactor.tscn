@@ -1,0 +1,136 @@
+[gd_scene load_steps=13 format=3 uid="uid://dn26y45k7r413"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Match_Visualization_Host.gd" id="1_7jdei"]
+[ext_resource type="PackedScene" uid="uid://biaht4ysa4apn" path="res://Scenes/UI/Avatar.tscn" id="2_dq5dv"]
+[ext_resource type="TileSet" uid="uid://dbqado2qd3j66" path="res://Scenes/UnitPath.tres" id="3_2bebh"]
+[ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="3_eihu1"]
+[ext_resource type="Texture2D" uid="uid://c5trgq5jumeji" path="res://Isometric/Road/beach.png" id="4_7hrbp"]
+[ext_resource type="Script" path="res://Scenes/unit_overlay.gd" id="5_j60ty"]
+[ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="5_kssen"]
+[ext_resource type="PackedScene" uid="uid://8v0qmrym53ag" path="res://Scenes/UI/cursor.tscn" id="6_govhi"]
+[ext_resource type="Script" path="res://Scripts/UI/Camera_Script.gd" id="7_j1syn"]
+[ext_resource type="PackedScene" uid="uid://b8shsa4j5s6j8" path="res://Scenes/Match_Visualization_Player.tscn" id="9_5jv8l"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kkav"]
+resource_name = "Test"
+texture = ExtResource("4_7hrbp")
+texture_region_size = Vector2i(100, 65)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w8plm"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(100, 50)
+sources/1 = SubResource("TileSetAtlasSource_1kkav")
+
+[node name="MainRefactor" type="Node"]
+
+[node name="Board" type="Node2D" parent="." node_paths=PackedStringArray("UIBase", "playerInfoDisplayHolder")]
+y_sort_enabled = true
+script = ExtResource("1_7jdei")
+UIBase = NodePath("../CanvasLayer/Control/VBoxContainer")
+avatarBase = ExtResource("2_dq5dv")
+playervisual = ExtResource("3_eihu1")
+playerInfoDisplayHolder = NodePath("../CanvasLayer/Control/ScrollContainer/GridContainer")
+playerInfoDisplayBase = ExtResource("9_5jv8l")
+cardInterfaceBase = ExtResource("5_kssen")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Board"]
+tile_set = ExtResource("3_2bebh")
+
+[node name="UnitOverlay" type="TileMapLayer" parent="Board"]
+modulate = Color(1, 1, 1, 0.757)
+tile_set = SubResource("TileSet_w8plm")
+script = ExtResource("5_j60ty")
+
+[node name="Cursor" parent="Board" node_paths=PackedStringArray("map") instance=ExtResource("6_govhi")]
+map = NodePath("../TileMapLayer")
+
+[node name="Camera2D" type="Camera2D" parent="Board"]
+offset = Vector2(300, 300)
+script = ExtResource("7_j1syn")
+moveSpeed = 100
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="CardButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16.53, 0)
+layout_mode = 2
+text = "Cards
+"
+
+[node name="Deselect" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16.53, 0)
+layout_mode = 2
+text = "Deselect"
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60.665)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="CardUI" type="Control" parent="CanvasLayer/Control/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer/Control/CardUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/Control/CardUI/HBoxContainer"]
+layout_mode = 2
+text = "ReturnToDefaultCard"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/VBoxContainer/Control/CardUI/HBoxContainer"]
+layout_mode = 2
+text = "DrawButton"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -0.599976
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/ScrollContainer"]
+custom_minimum_size = Vector2(1152, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/CardButton" to="Board" method="_ModeCard"]
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/Deselect" to="Board" method="_deselectActiveUnit"]
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Control/CardUI/HBoxContainer/Button" to="Board" method="_ModeDefault"]
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Control/CardUI/HBoxContainer/Button2" to="Board" method="_drawCard"]

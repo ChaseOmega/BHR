@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=4 uid="uid://hg742u6hnq52"]
+
+[ext_resource type="TileSet" uid="uid://bvgaepppsj8j5" path="res://FullTileSet.tres" id="1_pjq2j"]
+[ext_resource type="Script" path="res://navigator.gd" id="2_hr388"]
+[ext_resource type="Texture2D" uid="uid://dr6dsdcf4hhxo" path="res://icon.svg" id="3_pfae1"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Walkable" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD/////9QAAAAAAAAAAAP7/9QAAAAAAAAAAAP3/9QAAAAAAAAABAP3/9QAAAAAAAAABAP7/9QAAAAAAAAACAP//9QAAAAAAAAACAP7/9QAAAAAAAAABAP//9QAAAAAAAAAAAPv/9QAAAAAAAAAAAPz/9QAAAAAAAAD///3/9QAAAAAAAAD///7/9QAAAAAAAAABAPv/9QAAAAAAAAACAPz/9QAAAAAAAAACAP3/9QAAAAAAAAADAP7/9QAAAAAAAAABAPr/9QAAAAAAAAACAAAA9QAAAAAAAAABAAEA9QADAAAAAAABAAIA9QADAAAAAAAAAAAA9QADAAAAAAAAAP//9QAAAAAAAAABAAAA9QAAAAAAAAABAPz/9QAAAAAAAAD+////9QADAAAAAAADAAMA9QADAAAAAAAEAAMA9QADAAAAAAAEAAQA9QADAAAAAAA=")
+tile_set = ExtResource("1_pjq2j")
+
+[node name="Blockers" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("1_pjq2j")
+y_sort_origin = 10
+
+[node name="Decoration" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("1_pjq2j")
+y_sort_origin = 64
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(137, -165)
+texture = ExtResource("3_pfae1")
+offset = Vector2(0, -65)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.035, 1.035)
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("Walk")]
+show_behind_parent = true
+top_level = true
+y_sort_enabled = true
+script = ExtResource("2_hr388")
+Walk = NodePath("../Walkable")

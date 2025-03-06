@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Archetype" load_steps=7 format=3 uid="uid://brq87xx3pnacu"]
+
+[ext_resource type="Script" path="res://Perks/perk.gd" id="1_o132k"]
+[ext_resource type="Resource" uid="uid://e2bjaghqhwqc" path="res://Perks/Durable.tres" id="2_voir6"]
+[ext_resource type="Resource" uid="uid://cqlq0v6h86t2n" path="res://Perks/Strong.tres" id="3_604uh"]
+[ext_resource type="Script" path="res://Archetypes/archetype.gd" id="4_2it4d"]
+[ext_resource type="Script" path="res://Skills/Skill.gd" id="5_jnvts"]
+[ext_resource type="Resource" uid="uid://c5ht6tm5woc6t" path="res://Skills/FusePower.tres" id="6_jxwjg"]
+
+[resource]
+script = ExtResource("4_2it4d")
+name = "Warrior"
+skills = Array[ExtResource("5_jnvts")]([ExtResource("6_jxwjg")])
+skillNumber = 0
+perks = Array[ExtResource("1_o132k")]([ExtResource("2_voir6"), ExtResource("3_604uh")])
+perkNumber = 0
+equipmentNumber = 0
+healthCostCurve = {
+0: 6,
+1: 7,
+2: 9
+}
+attackCostCurve = {
+0: 2,
+1: 3,
+4: 8
+}
+defenseCostCurve = {
+0: 2,
+1: 3,
+3: 4
+}
+mobilityCostCurve = {
+0: 3,
+1: 4,
+3: 5
+}
