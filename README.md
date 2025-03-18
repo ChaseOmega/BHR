@@ -30,3 +30,5 @@ Chase Stump - chaseomega@gmail.com
 
 ---
 I will be adding various aspects of this project to their own repos for easier implementation into other projects. These will be made public alongside this project.
+
+Also keep in mind that most art assets are not my own and I do not claim ownership of them. These are placeholders.
