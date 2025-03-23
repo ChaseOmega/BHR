@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bh5glfdo8qqsu"]
 
-[ext_resource type="Script" path="res://Scripts/Effecters/Skills/Skill_Interface.gd" id="1_ntpm7"]
+[ext_resource type="Script" uid="uid://bpnvvjgdcdv4u" path="res://Scripts/Effecters/Skills/Skill_Interface.gd" id="1_ntpm7"]
 [ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="2_kp032"]
 
 [node name="CardInterface" type="Control" node_paths=PackedStringArray("skillHolder", "activationButton")]

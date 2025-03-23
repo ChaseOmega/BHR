@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="Trade_In" load_steps=3 format=3 uid="uid://crugcxtvg6m7j"]
 
 [ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="1_fqpgt"]
-[ext_resource type="Script" path="res://Skills/Trade_In.gd" id="1_tcwrb"]
+[ext_resource type="Script" uid="uid://ro4kq8s4mito" path="res://Skills/Trade_In.gd" id="1_tcwrb"]
 
 [resource]
 script = ExtResource("1_tcwrb")
+Type = 0
 name = "FuseMovement"
 description = "der"
 flavorText = "dadaa"
+instanceText = ""
 art = ExtResource("1_fqpgt")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8ev66thhrera"]
 
-[ext_resource type="Script" path="res://Scripts/UI/Equipment_Interface.gd" id="1_xq7q8"]
+[ext_resource type="Script" uid="uid://prkbtdndemmk" path="res://Scripts/UI/Equipment_Interface.gd" id="1_xq7q8"]
 [ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="2_66idi"]
 
 [node name="CardInterface" type="Control" node_paths=PackedStringArray("equipmentHolder", "activationButton")]

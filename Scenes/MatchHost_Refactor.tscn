@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://dn26y45k7r413"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/Match_Visualization_Host.gd" id="1_7jdei"]
+[ext_resource type="Script" uid="uid://bv3aito66ycy4" path="res://Scripts/Gameplay/Match_Visualization_Host.gd" id="1_7jdei"]
 [ext_resource type="PackedScene" uid="uid://biaht4ysa4apn" path="res://Scenes/UI/Avatar.tscn" id="2_dq5dv"]
 [ext_resource type="TileSet" uid="uid://dbqado2qd3j66" path="res://Scenes/UnitPath.tres" id="3_2bebh"]
 [ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="3_eihu1"]
 [ext_resource type="Texture2D" uid="uid://c5trgq5jumeji" path="res://Isometric/Road/beach.png" id="4_7hrbp"]
-[ext_resource type="Script" path="res://Scenes/unit_overlay.gd" id="5_j60ty"]
+[ext_resource type="Script" uid="uid://bmkg520502vc5" path="res://Scenes/unit_overlay.gd" id="5_j60ty"]
 [ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="5_kssen"]
 [ext_resource type="PackedScene" uid="uid://8v0qmrym53ag" path="res://Scenes/UI/cursor.tscn" id="6_govhi"]
-[ext_resource type="Script" path="res://Scripts/UI/Camera_Script.gd" id="7_j1syn"]
+[ext_resource type="Script" uid="uid://bc722jv14pmjj" path="res://Scripts/UI/Camera_Script.gd" id="7_j1syn"]
 [ext_resource type="PackedScene" uid="uid://b8shsa4j5s6j8" path="res://Scenes/Match_Visualization_Player.tscn" id="9_5jv8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kkav"]

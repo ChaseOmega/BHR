@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://df7vtrmfwsovp"]
 
-[ext_resource type="Script" path="res://Import/Chat.gd" id="1_rcvdv"]
+[ext_resource type="Script" uid="uid://d0a2sgaogqpxf" path="res://Import/Chat.gd" id="1_rcvdv"]
 
 [node name="Chat" type="Control" node_paths=PackedStringArray("ChatDisplay", "MessageInput")]
 layout_mode = 3

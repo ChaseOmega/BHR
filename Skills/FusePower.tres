@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="Trade_In" load_steps=3 format=3 uid="uid://c5ht6tm5woc6t"]
 
-[ext_resource type="Script" path="res://Skills/Trade_In.gd" id="1_5sp2o"]
+[ext_resource type="Script" uid="uid://ro4kq8s4mito" path="res://Skills/Trade_In.gd" id="1_5sp2o"]
 [ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="1_suu4n"]
 
 [resource]
 script = ExtResource("1_5sp2o")
+Type = 0
 name = "FusePowerT"
 description = ""
 flavorText = ""
+instanceText = ""
 art = ExtResource("1_suu4n")

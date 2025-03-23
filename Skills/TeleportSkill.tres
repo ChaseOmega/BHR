@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="teleportSkill" load_steps=3 format=3 uid="uid://dpyf81583ul24"]
 
-[ext_resource type="Script" path="res://Skills/TeleportSkill.gd" id="1_cv3b4"]
+[ext_resource type="Script" uid="uid://ca0a4rgftki1r" path="res://Skills/TeleportSkill.gd" id="1_cv3b4"]
 [ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="1_fmy8a"]
 
 [resource]
 script = ExtResource("1_cv3b4")
+Type = 0
 name = "Teleporter"
 description = "Warps to another location that is within your raw movement range"
 flavorText = "\"TEREPORTO\""
+instanceText = ""
 art = ExtResource("1_fmy8a")

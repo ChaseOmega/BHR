@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Archetype" load_steps=7 format=3 uid="uid://brq87xx3pnacu"]
 
-[ext_resource type="Script" path="res://Perks/perk.gd" id="1_o132k"]
+[ext_resource type="Script" uid="uid://oqajc6eqcbce" path="res://Perks/perk.gd" id="1_o132k"]
 [ext_resource type="Resource" uid="uid://e2bjaghqhwqc" path="res://Perks/Durable.tres" id="2_voir6"]
 [ext_resource type="Resource" uid="uid://cqlq0v6h86t2n" path="res://Perks/Strong.tres" id="3_604uh"]
-[ext_resource type="Script" path="res://Archetypes/archetype.gd" id="4_2it4d"]
-[ext_resource type="Script" path="res://Skills/Skill.gd" id="5_jnvts"]
+[ext_resource type="Script" uid="uid://b5jgrbs8xjmvu" path="res://Archetypes/archetype.gd" id="4_2it4d"]
+[ext_resource type="Script" uid="uid://dymwubctribcn" path="res://Skills/Skill.gd" id="5_jnvts"]
 [ext_resource type="Resource" uid="uid://c5ht6tm5woc6t" path="res://Skills/FusePower.tres" id="6_jxwjg"]
 
 [resource]

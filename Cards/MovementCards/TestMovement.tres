@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://dnrr2tatoatw2"]
 
-[ext_resource type="Script" path="res://Cards/Card.gd" id="1_bxt7n"]
+[ext_resource type="Script" uid="uid://3hqdn6gsbkdw" path="res://Cards/Card.gd" id="1_bxt7n"]
 
 [resource]
 resource_local_to_scene = true

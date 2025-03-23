@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8shsa4j5s6j8"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/match_visualization_player.gd" id="1_yxccm"]
+[ext_resource type="Script" uid="uid://b5fbc32x75qyf" path="res://Scripts/Gameplay/match_visualization_player.gd" id="1_yxccm"]
 [ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="2_hi2f3"]
 
 [node name="MatchVisualizationMatchPlayer" type="Control" node_paths=PackedStringArray("playerName", "statLineAttack", "statLineDefense", "statLineMobility", "HealthText", "HealthBar", "CardHolder")]

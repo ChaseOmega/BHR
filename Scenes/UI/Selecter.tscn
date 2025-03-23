@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvberdwx60f75"]
 
-[ext_resource type="Script" path="res://Scripts/UI/SelecterController.gd" id="1_iqgwc"]
+[ext_resource type="Script" uid="uid://cpwc6xhosmwl3" path="res://Scripts/UI/SelecterController.gd" id="1_iqgwc"]
 [ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="2_qxh12"]
 
 [node name="Selecter" type="Control" node_paths=PackedStringArray("selectedDisplay", "optionsDisplay")]

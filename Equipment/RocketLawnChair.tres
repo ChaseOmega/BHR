@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="Equipment" load_steps=3 format=3 uid="uid://psbcjmu8ydgp"]
 
 [ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="1_43ihw"]
-[ext_resource type="Script" path="res://Equipment/Equipment.gd" id="1_brphh"]
+[ext_resource type="Script" uid="uid://ki5a1u1etrme" path="res://Equipment/Equipment.gd" id="1_brphh"]
 
 [resource]
 script = ExtResource("1_brphh")
+Type = 0
 name = "RaucetLaucnher"
 description = "Target a single space within half of your attack range rounded up and deal damage in an 2 space area around it based on your attack stat."
 flavorText = "This thing is illegal in at least 3 different states!"
+instanceText = ""
 art = ExtResource("1_43ihw")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvffdvofpp8ng"]
 
-[ext_resource type="Script" path="res://Scripts/Effecters/Cards/Card_Interface.gd" id="1_021pk"]
+[ext_resource type="Script" uid="uid://dklcnrcmqnyim" path="res://Scripts/Effecters/Cards/Card_Interface.gd" id="1_021pk"]
 [ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="2_c0kdx"]
 
 [node name="CardInterface" type="Control" node_paths=PackedStringArray("CardHolder", "GenericButton", "SpecialButton")]

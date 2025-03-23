@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dejo0e5d32ria"]
 
-[ext_resource type="Script" path="res://Scripts/UI/PreLobbyHost.gd" id="1_jvpt0"]
+[ext_resource type="Script" uid="uid://wxcrncaxyjls" path="res://Scripts/UI/PreLobbyHost.gd" id="1_jvpt0"]
 [ext_resource type="Texture2D" uid="uid://dr6dsdcf4hhxo" path="res://Images/icon.svg" id="2_7gebc"]
 [ext_resource type="PackedScene" uid="uid://c8ybom337542h" path="res://Scenes/EffecterVisualizerMini.tscn" id="2_jcm52"]
 [ext_resource type="PackedScene" uid="uid://bvberdwx60f75" path="res://Scenes/UI/Selecter.tscn" id="4_vxjet"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8ybom337542h"]
 
-[ext_resource type="Script" path="res://Scripts/Effecters/effecter_visualizer_mini.gd" id="1_ne0hn"]
+[ext_resource type="Script" uid="uid://oka31am23jo6" path="res://Scripts/Effecters/effecter_visualizer_mini.gd" id="1_ne0hn"]
 [ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="2_6sppo"]
 
 [node name="CardVisualizerFull" type="Button" node_paths=PackedStringArray("coloredRegions", "art", "title", "value")]

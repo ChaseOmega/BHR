@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://csr0pktknii74"]
 
-[ext_resource type="Script" path="res://Import/ServerBrowser.gd" id="1_dsmmg"]
+[ext_resource type="Script" uid="uid://7ypf74oepey8" path="res://Import/ServerBrowser.gd" id="1_dsmmg"]
 [ext_resource type="PackedScene" uid="uid://2q22qsbbnpgo" path="res://Scenes/PreLobbyClient.tscn" id="2_ilyoj"]
 [ext_resource type="PackedScene" uid="uid://dejo0e5d32ria" path="res://Scenes/PreLobbyHost.tscn" id="3_mjof2"]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="StatModifier" load_steps=4 format=3 uid="uid://cnis6tebcg362"]
 
-[ext_resource type="Script" path="res://Perks/StatModifier.gd" id="1_r7bbu"]
-[ext_resource type="Script" path="res://Stats/Statline.gd" id="2_sgg7o"]
+[ext_resource type="Script" uid="uid://xfecn4h83j3b" path="res://Perks/StatModifier.gd" id="1_r7bbu"]
+[ext_resource type="Script" uid="uid://u3ehgut2hui8" path="res://Stats/Statline.gd" id="2_sgg7o"]
 
 [sub_resource type="Resource" id="Resource_qcja4"]
 script = ExtResource("2_sgg7o")

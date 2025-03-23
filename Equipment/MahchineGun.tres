@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="Equipment" load_steps=3 format=3 uid="uid://cmol2w0s2h3i5"]
 
 [ext_resource type="Texture2D" uid="uid://d2wh4luurk44o" path="res://Images/icon2.svg" id="1_anrw2"]
-[ext_resource type="Script" path="res://Equipment/Equipment.gd" id="1_i1ycc"]
+[ext_resource type="Script" uid="uid://ki5a1u1etrme" path="res://Equipment/Equipment.gd" id="1_i1ycc"]
 
 [resource]
 script = ExtResource("1_i1ycc")
+Type = 0
 name = "MahchineGawn"
 description = ""
 flavorText = ""
+instanceText = ""
 art = ExtResource("1_anrw2")
